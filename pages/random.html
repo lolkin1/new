@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Случайное блюдо</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/random.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="coc.html" class="logo">      
+        <img src="img/dsBuffer_bmp-no-bg-preview (carve.photos).png" alt="logo">
+        lolkins
+      </a>
+      <nav class="header__nav">
+        <a href="../coc.html" class="header__link">Домой</a>
+        <a href="recept.html" class="header__link">Ингредиенты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h1 class="page-title">Случайное блюдо</h1>
+      
+      <div class="random-container">
+        <button onclick="getRandomRecipe()" class="random-btn">
+          <span class="btn-icon">🎲</span>
+          Крутить блюдо
+        </button>
+        
+        <!-- карточка с рецептом -->
+        <div id="recipeCard" class="recipe-card hidden">
+          <div class="recipe-image">
+            <img id="recipeImg" src="" alt="Блюдо" onerror="this.src='img/default-recipe.jpg'">
+          </div>
+          
+          <div class="recipe-info">
+            <h2 id="recipeName"></h2>
+            
+            <div class="recipe-meta">
+              <span class="meta-item">⏱ <span id="cookingTime"></span></span>
+              <span class="meta-item">🍴 <span id="difficulty"></span></span>
+            </div>
+            
+            <p id="recipeDescription" class="recipe-description"></p>
+            
+            <div class="ingredients-section">
+              <h3>Ингредиенты:</h3>
+              <ul id="ingredientsList"></ul>
+            </div>
+            
+            <div class="instructions-section">
+              <h3>Приготовление:</h3>
+              <p id="instructions"></p>
+            </div>
+            
+            <div class="recipe-actions">
+              <button onclick="getRandomRecipe()" class="next-btn">Другое блюдо</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- когда рецепт еще не выбран -->
+        <div id="placeholder" class="placeholder">
+          <div class="placeholder-icon">🍽️</div>
+          <p>Нажмите кнопку, чтобы получить случайный рецепт!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="End">
+      <a href="mailto:lollolkin146@gmail.com">Email: lollolkin146@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="script/recipes.js"></script>
+  <script src="script/random.js"></script>
+</body>
+</html>

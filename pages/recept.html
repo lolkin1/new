@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск по ингредиентам</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/find-recipe.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="coc.html" class="logo">      
+        <img src="img/dsBuffer_bmp-no-bg-preview (carve.photos).png" alt="logo">
+        lolkins
+      </a>
+      <nav class="header__nav">
+        <a href="coc.html" class="header__link">Домой</a>
+        <a href="random.html" class="header__link">Случайное блюдо</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h1 class="page-title">Что у вас есть?</h1>
+      
+      <div class="search-container">
+        <div class="ingredients-input">
+          <h2>Введите ваши ингредиенты:</h2>
+          
+          <!-- Поле для ввода ингредиентов -->
+          <div class="input-group">
+            <input type="text" id="ingredientInput" placeholder="Например: курица, картошка, лук">
+            <button onclick="addIngredient()" class="add-btn">Добавить</button>
+          </div>
+          
+          <!-- Список добавленных ингредиентов -->
+          <div id="ingredientsList" class="ingredients-list">
+            <!-- сюда будут добавляться ингредиенты -->
+          </div>
+          
+          <!-- Кнопка поиска -->
+          <button onclick="searchRecipes()" class="search-btn">Найти рецепты</button>
+        </div>
+      
+        <div class="popular-ingredients">
+          <h3>Популярные ингредиенты:</h3>
+          <div class="popular-tags">
+            <span onclick="addQuickIngredient('курица')">🐔 Курица</span>
+            <span onclick="addQuickIngredient('картошка')">🥔 Картошка</span>
+            <span onclick="addQuickIngredient('лук')">🧅 Лук</span>
+            <span onclick="addQuickIngredient('морковь')">🥕 Морковь</span>
+            <span onclick="addQuickIngredient('яйца')">🥚 Яйца</span>
+            <span onclick="addQuickIngredient('макароны')">🍝 Макароны</span>
+            <span onclick="addQuickIngredient('рис')">🍚 Рис</span>
+            <span onclick="addQuickIngredient('мясо')">🥩 Мясо</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="End">
+      <a href="mailto:lollolkin146@gmail.com">Email: lollolkin146@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="script/recipes.js"></script>
+  <script src="script/find-recipe.js"></script>
+</body>
+</html>
