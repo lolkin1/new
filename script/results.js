@@ -1,10 +1,9 @@
-// Загружаем ингредиенты пользователя
 const userIngredients = JSON.parse(localStorage.getItem('userIngredients')) || [];
 
-// Ищем рецепты
+// ищем рецепты
 const foundRecipes = findRecipesByIngredients(userIngredients);
 
-// Функция для расчета процента совпадения
+// функция для расчета процента совпадения
 function calculateMatchPercentage(recipeIngredients) {
   const matchedIngredients = userIngredients.filter(ingredient =>
     recipeIngredients.some(recipeIngredient =>
@@ -15,12 +14,12 @@ function calculateMatchPercentage(recipeIngredients) {
   return Math.round((matchedIngredients.length / recipeIngredients.length) * 100);
 }
 
-// Функция для открытия модального окна с рецептом
+// функция для открытия модального окна с рецептом
 function openRecipeModal(recipe) {
   const modal = document.getElementById('recipeModal');
   const modalContent = document.getElementById('modalRecipeContent');
   
-  // Форматируем инструкции (если их нет, добавляем стандартные)
+  // форматируем инструкции (если их нет, добавляем стандартные)
   const instructions = recipe.instructions || 
     '1. Подготовьте все ингредиенты\n2. Смешайте ингредиенты согласно рецепту\n3. Приготовьте блюдо\n4. Подавайте и наслаждайтесь!';
   
@@ -63,17 +62,17 @@ function openRecipeModal(recipe) {
   
   modal.style.display = 'block';
   
-  // Блокируем прокрутку основной страницы
+  // блокируем прокрутку основной страницы
   document.body.style.overflow = 'hidden';
 }
 
-// Функция закрытия модального окна
+// функция закрытия модального окна
 function closeModal() {
   document.getElementById('recipeModal').style.display = 'none';
   document.body.style.overflow = 'auto';
 }
 
-// Отображаем результаты
+// отображаем результаты
 function displayResults() {
   const container = document.getElementById('resultsContainer');
   
@@ -82,12 +81,15 @@ function displayResults() {
     return;
   }
   
-  container.innerHTML = foundRecipes.map((recipe, index) => {
-    const matchPercentage = calculateMatchPercentage(recipe.ingredients);
-    
-    return `
-    <div class="recipe-card" data-recipe-index="${index}">
-      <img src="${recipe.image}" alt="${recipe.name}" onerror="this.src='img/default-recipe.jpg'">
+  container.innerHTML = foundRecipes.map((recipe) => {
+  const matchPercentage = calculateMatchPercentage(recipe.ingredients);
+  
+  
+  const recipeJson = JSON.stringify(recipe).replace(/'/g, "\\'");
+  
+  return `
+    <div class="recipe-card">
+      <img src="${recipe.image}" alt="${recipe.name}" onerror="this.src='../img/default-recipe.jpg'">
       <h3>${recipe.name}</h3>
       <span class="match-indicator">✅ Совпадение: ${matchPercentage}%</span>
       <p>${recipe.description || 'Вкусное домашнее блюдо'}</p>
@@ -101,12 +103,12 @@ function displayResults() {
           return `<li style="${hasIngredient ? 'color: #4caf50; font-weight: bold;' : ''}">${ing}</li>`;
         }).join('')}
       </ul>
-      <button class="recipe-btn" onclick="openRecipeModal(recipes[${index}])">Смотреть рецепт →</button>
+      <button class="recipe-btn" onclick='openRecipeModal(${recipeJson})'>Смотреть рецепт →</button>
     </div>
   `}).join('');
 }
 
-// Закрытие по клику вне модалки
+// закрытие по клику вне модалки
 window.onclick = function(event) {
   const modal = document.getElementById('recipeModal');
   if (event.target == modal) {
@@ -114,14 +116,14 @@ window.onclick = function(event) {
   }
 }
 
-// Закрытие по ESC
+// закрытие по ESC
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
 });
 
-// Добавляем обработчик для кнопки закрытия
+// добавляем обработчик для кнопки закрытия
 document.addEventListener('DOMContentLoaded', function() {
   const closeBtn = document.querySelector('.close-modal');
   if (closeBtn) {

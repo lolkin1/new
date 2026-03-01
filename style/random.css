@@ -1,4 +1,3 @@
-/* Стили для страницы случайного блюда */
 .page-title {
   text-align: center;
   margin: 40px 0;
@@ -12,7 +11,7 @@
   text-align: center;
 }
 
-/* Кнопка случайного блюда */
+/* кнопка случайного блюда */
 .random-btn {
   background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
   color: white;
@@ -154,11 +153,11 @@
   background: #555;
 }
 
-/* Заглушка */
+/* там где вилка нож */
 .placeholder {
   text-align: center;
   padding: 80px 20px;
-  background: #f9f9f9;
+  background: #ff0000;
   border-radius: 20px;
   margin-top: 40px;
 }

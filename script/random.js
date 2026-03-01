@@ -1,34 +1,32 @@
-// Функция для получения случайного рецепта
 function getRandomRecipe() {
-  // Показываем анимацию загрузки
+  //анимация загрузки
   showLoading();
   
-  // Имитация загрузки (можно убрать в реальном проекте)
   setTimeout(() => {
-    // Получаем случайный индекс
+    // получаем случайный индекс
     const randomIndex = Math.floor(Math.random() * recipes.length);
     const recipe = recipes[randomIndex];
     
-    // Отображаем рецепт
+    // отображаем рецепт
     displayRandomRecipe(recipe);
-  }, 500); // Небольшая задержка для эффекта
+  }, 500); // небольшая задержка для эффекта
 }
 
-// Функция для отображения рецепта
+// функция для отображения рецепта
 function displayRandomRecipe(recipe) {
-  // Скрываем заглушку и показываем карточку
+  // скрываем заглушку и показываем карточку
   document.getElementById('placeholder').style.display = 'none';
   const recipeCard = document.getElementById('recipeCard');
   recipeCard.classList.remove('hidden');
   
-  // Заполняем данные рецепта
+  // заполняем данные рецепта
   document.getElementById('recipeName').textContent = recipe.name;
   document.getElementById('cookingTime').textContent = recipe.cookingTime || '30 минут';
   document.getElementById('difficulty').textContent = recipe.difficulty || 'Средне';
   document.getElementById('recipeDescription').textContent = recipe.description || 'Вкусное домашнее блюдо';
   document.getElementById('recipeImg').src = recipe.image || '/img/default-recipe.jpg';
   
-  // Заполняем ингредиенты
+  // заполняем ингредиенты
   const ingredientsList = document.getElementById('ingredientsList');
   ingredientsList.innerHTML = '';
   recipe.ingredients.forEach(ingredient => {
@@ -37,11 +35,11 @@ function displayRandomRecipe(recipe) {
     ingredientsList.appendChild(li);
   });
   
-  // Заполняем инструкцию
+  // инструкция
   document.getElementById('instructions').textContent = recipe.instructions || '1. Подготовьте все ингредиенты\n2. Приготовьте блюдо\n3. Подавайте и наслаждайтесь!';
 }
 
-// Функция показа загрузки
+// показ загрузки
 function showLoading() {
   const recipeCard = document.getElementById('recipeCard');
   const placeholder = document.getElementById('placeholder');
@@ -51,8 +49,7 @@ function showLoading() {
   placeholder.innerHTML = '<div class="loading"></div><p>Ищем вкусное блюдо...</p>';
 }
 
-// Добавляем больше рецептов в базу (дополните recipes.js)
-// Примеры дополнительных рецептов для разнообразия:
+// добавляем больше рецептов в базу
 const additionalRecipes = [
   {
     name: "Паста Карбонара",
