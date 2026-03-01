@@ -1,0 +1,164 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  
+}
+
+a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.logo {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.4s;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}
+
+.header {
+  padding: 10px 0px;
+  background-color: rgb(43, 6, 33);
+  backdrop-filter: blur(10px);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+  gap: 60px;
+}
+
+.header__link {
+  font-weight: 700;
+  font-size: 18px;
+  transition: opacity 0.3s;
+}
+
+.header__link:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 400px; /* Расстояние между карточками */
+  margin-top: 60px;
+  margin-bottom: 90px;
+  flex-wrap: wrap; 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.card .foto {
+  margin-bottom: 20px;
+}
+
+.card .foto img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin: 15px 0;
+  text-align: center;
+}
+
+.card-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  width: fit-content;
+}
+
+.card-btn:hover {
+  opacity: 0.6;
+}
+
+.End {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.End:hover {
+  opacity: 0.6;
+}
+
+footer {
+  padding: 50px;
+  background-color: rgb(43, 6, 33);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    gap: 50px; 
+  }
+  
+  .card .foto img {
+    width: 200px;
+    height: 200px;
+  }
+}

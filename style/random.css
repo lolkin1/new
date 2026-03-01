@@ -1,0 +1,231 @@
+/* Стили для страницы случайного блюда */
+.page-title {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 36px;
+  color: #333;
+}
+
+.random-container {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+/* Кнопка случайного блюда */
+.random-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  padding: 20px 50px;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0 40px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.random-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-icon {
+  font-size: 28px;
+}
+
+/* Карточка рецепта */
+.recipe-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card.hidden {
+  display: none;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 30px;
+}
+
+.recipe-info h2 {
+  font-size: 32px;
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.recipe-meta {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 16px;
+}
+
+.recipe-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.ingredients-section, .instructions-section {
+  margin-bottom: 30px;
+}
+
+.ingredients-section h3, .instructions-section h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#ingredientsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+#ingredientsList li {
+  padding: 8px 15px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  color: #555;
+  font-size: 16px;
+}
+
+#instructions {
+  color: #666;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.recipe-actions {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.next-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.next-btn:hover {
+  background: #555;
+}
+
+/* Заглушка */
+.placeholder {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.placeholder-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.placeholder p {
+  font-size: 20px;
+  color: #888;
+}
+
+/* Анимация загрузки */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ff6b6b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .random-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+  
+  .recipe-image {
+    height: 300px;
+  }
+  
+  .recipe-info {
+    padding: 20px;
+  }
+  
+  .recipe-info h2 {
+    font-size: 24px;
+  }
+  
+  #ingredientsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .recipe-image {
+    height: 250px;
+  }
+}
