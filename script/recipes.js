@@ -6,7 +6,7 @@ const recipes = [
     difficulty: "Средне",
     description: "Классическая итальянская паста",
     instructions: "1. Обжарьте бекон\n2. Смешайте яйца с сыром\n3. Добавьте к горячим макаронам",
-    image: "/img/carbonara.jpg"  // Путь от корня
+    image: "../img/carbonara.jpg"  // Путь от корня
   },
   {
     name: "Борщ",
@@ -15,7 +15,7 @@ const recipes = [
     difficulty: "Сложно",
     description: "Настоящий украинский борщ",
     instructions: "1. Сварите бульон\n2. Подготовьте овощи\n3. Соедините все ингредиенты",
-    image: "/img/borsch.jpg"  // Путь от корня
+    image: "../img/borsch.jpg"  // Путь от корня
   },
   {
     name: "Омлет",
@@ -24,7 +24,7 @@ const recipes = [
     difficulty: "Легко",
     description: "Пышный завтрак за 10 минут",
     instructions: "1. Взбейте яйца с молоком\n2. Вылейте на сковороду\n3. Жарьте под крышкой",
-    image: "/img/eggs.jpg"  // Путь от корня
+    image: "../img/eggs.jpg"  // Путь от корня
   }
 ];  
 

@@ -61,7 +61,7 @@ const additionalRecipes = [
     difficulty: "Средне",
     description: "Классическая итальянская паста",
     instructions: "1. Обжарьте бекон\n2. Смешайте яйца с сыром\n3. Добавьте к горячим макаронам",
-    image: "img/carbonara.jpg"
+    image: "../img/carbonara.jpg"
   },
   {
     name: "Борщ",
@@ -70,7 +70,7 @@ const additionalRecipes = [
     difficulty: "Сложно",
     description: "Настоящий украинский борщ",
     instructions: "1. Сварите бульон\n2. Подготовьте овощи\n3. Соедините все ингредиенты",
-    image: "img/borsch.jpg"
+    image: "../img/borsch.jpg"
   },
   {
     name: "Омлет",
