@@ -26,7 +26,7 @@ function displayRandomRecipe(recipe) {
   document.getElementById('cookingTime').textContent = recipe.cookingTime || '30 минут';
   document.getElementById('difficulty').textContent = recipe.difficulty || 'Средне';
   document.getElementById('recipeDescription').textContent = recipe.description || 'Вкусное домашнее блюдо';
-  document.getElementById('recipeImg').src = recipe.image || 'img/default-recipe.jpg';
+  document.getElementById('recipeImg').src = recipe.image || '/img/default-recipe.jpg';
   
   // Заполняем ингредиенты
   const ingredientsList = document.getElementById('ingredientsList');
@@ -79,7 +79,7 @@ const additionalRecipes = [
     difficulty: "Легко",
     description: "Пышный завтрак за 10 минут",
     instructions: "1. Взбейте яйца с молоком\n2. Вылейте на сковороду\n3. Жарьте под крышкой",
-    image: "img/omelette.jpg"
+    image: "../img/eggs.jpg"
   }
 ];
 

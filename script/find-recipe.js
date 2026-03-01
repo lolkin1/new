@@ -1,6 +1,6 @@
 let userIngredients = [];
 
-// Добавление ингредиента
+// добавление ингредиента
 function addIngredient() {
   const input = document.getElementById('ingredientInput');
   const ingredient = input.value.trim();
@@ -12,7 +12,7 @@ function addIngredient() {
   }
 }
 
-// Добавление из популярных
+// добавление из популярных
 function addQuickIngredient(ingredient) {
   if (!userIngredients.includes(ingredient)) {
     userIngredients.push(ingredient);
@@ -20,7 +20,7 @@ function addQuickIngredient(ingredient) {
   }
 }
 
-// Обновление списка ингредиентов на странице
+// обновление списка ингредиентов на странице
 function updateIngredientsList() {
   const list = document.getElementById('ingredientsList');
   list.innerHTML = '';
@@ -36,22 +36,22 @@ function updateIngredientsList() {
   });
 }
 
-// Удаление ингредиента
+// удаление ингредиента
 function removeIngredient(ingredient) {
   userIngredients = userIngredients.filter(i => i !== ingredient);
   updateIngredientsList();
 }
 
-// Поиск рецептов
+// поиск рецептов
 function searchRecipes() {
   if (userIngredients.length === 0) {
     alert('Добавьте хотя бы один ингредиент!');
     return;
   }
   
-  // Сохраняем ингредиенты в localStorage для передачи на страницу результатов
+  // сохраняем ингредиенты в localStorage для передачи на страницу результатов
   localStorage.setItem('userIngredients', JSON.stringify(userIngredients));
   
-  // Переходим на страницу с результатами
+  // переход на страницу с результатами
   window.location.href = 'results.html';
 }

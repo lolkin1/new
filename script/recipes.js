@@ -1,38 +1,44 @@
 const recipes = [
   {
-    name: "Куриный суп",
-    ingredients: ["курица", "картошка", "лук", "морковь"],
-    description: "Сытный домашний суп, который согреет в холодный день",
-    cookingTime: "60 минут",
+    name: "Паста Карбонара",
+    ingredients: ["спагетти", "яйца", "бекон", "пармезан", "чеснок"],
+    cookingTime: "25 минут",
     difficulty: "Средне",
-    servings: "4-5",
-    instructions: "1. Нарежьте курицу и варите 30 минут\n2. Добавьте нарезанную картошку\n3. Обжарьте лук с морковью и добавьте в суп\n4. Варите еще 15 минут\n5. Посолите по вкусу и подавайте с зеленью",
-    image: "img/chicken-soup.jpg"
+    description: "Классическая итальянская паста",
+    instructions: "1. Обжарьте бекон\n2. Смешайте яйца с сыром\n3. Добавьте к горячим макаронам",
+    image: "/img/carbonara.jpg"  // Путь от корня
   },
   {
-    name: "Яичница с луком",
-    ingredients: ["яйца", "лук"],
-    description: "Быстрый и питательный завтрак",
+    name: "Борщ",
+    ingredients: ["свекла", "капуста", "картошка", "морковь", "лук", "мясо"],
+    cookingTime: "2 часа",
+    difficulty: "Сложно",
+    description: "Настоящий украинский борщ",
+    instructions: "1. Сварите бульон\n2. Подготовьте овощи\n3. Соедините все ингредиенты",
+    image: "/img/borsch.jpg"  // Путь от корня
+  },
+  {
+    name: "Омлет",
+    ingredients: ["яйца", "молоко", "соль", "масло"],
     cookingTime: "10 минут",
     difficulty: "Легко",
-    servings: "1-2",
-    instructions: "1. Нарежьте лук и обжарьте до золотистого цвета\n2. Разбейте яйца на сковороду\n3. Жарьте до готовности\n4. Посолите, поперчите по вкусу",
-    image: "img/eggs.jpg"
-  },
-  // ... остальные рецепты
-];
+    description: "Пышный завтрак за 10 минут",
+    instructions: "1. Взбейте яйца с молоком\n2. Вылейте на сковороду\n3. Жарьте под крышкой",
+    image: "/img/eggs.jpg"  // Путь от корня
+  }
+];  
 
-// Функция поиска рецептов по ингредиентам
+// функция поиска рецептов по ингредиентам
 function findRecipesByIngredients(userIngredients) {
   return recipes.filter(recipe => {
-    // Проверяем, что все ингредиенты пользователя есть в рецепте
+    // проверяем что все ингредиенты пользователя есть в рецепте
     const hasAllIngredients = userIngredients.every(ingredient => 
       recipe.ingredients.some(recipeIngredient => 
         recipeIngredient.toLowerCase().includes(ingredient.toLowerCase())
       )
     );
     
-    // Возвращаем рецепты
+    // возвращаем рецепты
     const matchPercentage = userIngredients.filter(ingredient =>
       recipe.ingredients.some(recipeIngredient =>
         recipeIngredient.toLowerCase().includes(ingredient.toLowerCase())
