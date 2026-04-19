@@ -1,6 +1,6 @@
 const userIngredients = JSON.parse(localStorage.getItem('userIngredients')) || [];
 
-// ищем рецепты
+// ищ рецепты
 const foundRecipes = findRecipesByIngredients(userIngredients);
 
 // функция для расчета процента совпадения
@@ -123,7 +123,7 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-// добавляем обработчик для кнопки закрытия
+// обработчик для кнопки закрытия
 document.addEventListener('DOMContentLoaded', function() {
   const closeBtn = document.querySelector('.close-modal');
   if (closeBtn) {
